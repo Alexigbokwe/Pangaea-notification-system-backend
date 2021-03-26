@@ -9,6 +9,7 @@ class AppServiceProvider {
       TopicService: ioc.asClass("App/Service/TopicService", "SINGLETON"),
       ClientService: ioc.asClass("App/Service/ClientService", "SINGLETON"),
       SubscriptionService: ioc.asClass("App/Service/SubscriptionService", "SINGLETON"),
+      MessageService: ioc.asClass("App/Service/MessageService", "SINGLETON"),
     };
   }
 

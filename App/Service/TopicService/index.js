@@ -32,9 +32,11 @@ class TopicService {
    */
   async getTopicByName(name) {
     return await new Promise(async (resolve, reject) => {
-      let topicName = name.toLowerCase();
-      let result = await TopicRepository.getByName(topicName);
-      result.status ? resolve({ status: true, data: result.data[0] }) : reject({ status: false, data:result.data });
+       let topicName = name.toLowerCase();
+        let result = await TopicRepository.getByName(topicName);
+      result.status
+        ? resolve({ status: true, data: result.data[0] })
+        : reject({ status: false, data: result.data });
     });
   }
 

@@ -16,4 +16,6 @@ Route.get("/", (req, res) => {
 
 Route.post("/subscribe/:topic", "SubscriptionController@store");
 
+Route.post("/publish/:topic", "TopicsController@publishMessage");
+
 module.exports = Route.exec;

@@ -20,6 +20,19 @@ class SqlRepo{
 
     /**
      * Find record by id
+     * @param {String} name
+     * @return Object
+     */
+    getByName = async(name) =>{
+        return await this.model.query().where('name', '=', name).then(data => {
+            return data == undefined || data.length == 0? {status:false,data}:{status:true,data};
+        }).catch(err => {
+            return {status:false,err};
+        })
+    }
+
+    /**
+     * Find record by id
      * @param {integer} id 
      * @return Object
      */
