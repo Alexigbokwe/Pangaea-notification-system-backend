@@ -1,13 +1,16 @@
 "use strict";
 const WsBaseController = require("@WsBaseController");
 
-class chatController extends WsBaseController {
+class NotificationController extends WsBaseController {
   constructor(socket) {
     super(socket);
+    this.socket = socket;
+    console.log(this.socket);
   }
 
   onMessage(data) {
     // same as: socket.on('message')
+    this.socket.emit("message", data);
     console.log(data);
   }
 
@@ -20,4 +23,4 @@ class chatController extends WsBaseController {
   }
 }
 
-module.exports = chatController;
+module.exports = NotificationController;

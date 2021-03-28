@@ -11,4 +11,4 @@
 
 const Ws = require("@socket.io");
 
-//Ws.channel("chat", "chatController");
+Ws.channel("notification", "NotificationController");

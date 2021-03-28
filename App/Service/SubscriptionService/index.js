@@ -7,6 +7,10 @@ class SubscriptionService {
     this._clientService = ClientService;
   }
 
+  async getSubscribers(topic_id) {
+    return await SubscriptionRepo.getTopicSubscribers(topic_id);
+  }
+
   async subscribeUser(topic, url) {
     return await new Promise(async (resolve, reject) => {
       let checkTopicResult = await this.#checkTopic(topic);
